@@ -15,13 +15,10 @@ const LoginForm = () => {
     e.preventDefault();
     setLoading(true);
     try {
-      const response = await axios.post(
-        "http://localhost:5000/api/users/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("https://fyp-back.vercel.app/login", {
+        email,
+        password,
+      });
       console.log(response.data); // Handle success response
       // Optionally, you can store the token in local storage or cookies
       // and redirect the user to another page (e.g., dashboard)

@@ -12,12 +12,13 @@ const SignupForm = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
+  axios.defaults.withCredentials = true;
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/users/register",
+        "https://fyp-back.vercel.app/register",
         {
           name,
           email,
